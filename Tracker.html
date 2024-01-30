@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <div><p id="liveTime"></p></div>
+    <div class="expense-tracker">
+        <h2>Expense Tracker</h2>
+        <div class="input-section">
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+            
+            <label for="category">Description:</label>
+            <input type="text" id="category" placeholder="Enter category" required>
+
+            <select id="expenseCategory" required>
+              <option value="Food">Food</option>
+              <option value="Utilities">Utilities</option>
+              <option value="Transportation">Transportation</option>
+              <!-- Add more categories as needed -->
+            </select>
+            
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" placeholder="Enter amount" required>
+            
+            <button onclick="addExpense()">Add Expense</button>
+            <button onclick="downloadList()">Download List</button>
+            <button onclick="clearLocalStorage()">Clear All</button>
+        </div>
+
+        <ul id="expenseList"></ul>
+    </div>
+
+    <div class="note-taker">
+     
+        <button onclick="openModal()">Add Note</button>
+
+        <ul id="note-list"></ul>
+        
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <textarea id="modal-text" rows="6" placeholder="Enter your note"></textarea>
+                <button onclick="saveNote()">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
